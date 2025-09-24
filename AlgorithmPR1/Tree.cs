@@ -39,7 +39,7 @@ public class Tree
         }
         foreach ((int number, string name, int money) in someaddition)
         {
-            this.vertexes.Add(new Tree(name,money,number,this));
+            this.vertexes.Add(new Tree(name, money, number, this));
         }
 
         return someaddition;
@@ -56,5 +56,4 @@ public class Tree
 
     public override string ToString() => $"{name} {money} {number}";
 }
-
 
