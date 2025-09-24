@@ -1,7 +1,7 @@
 public class Tree
 {
     public Tree parent;
-    public List<Tree> vertexes = new List<Tree>();
+    public List<Tree> vertexes{ get; private set; } = new List<Tree>();
     //эта хрень чисто для моей задачки
     public string name { get; private set; }
     public int money { get; private set; }

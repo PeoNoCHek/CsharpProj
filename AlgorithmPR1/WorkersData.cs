@@ -4,7 +4,7 @@ public class WorkersData
 {
     //public List<(int number, String name, int money)> allWorkersData { get; private set; } = new List<(int number, string name, int money)>();
     public Dictionary<int, Tree> allWorkersData { get; private set; } = new Dictionary<int, Tree>(); //allWorkersData <---- tree_dictionary
-    public Tree root = null;
+    public Tree root{ get; private set; }
     public WorkersData(string namesPath, string positionPath)
     {
         using (StreamReader reader = new StreamReader(namesPath))
