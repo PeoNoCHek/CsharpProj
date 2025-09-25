@@ -1,4 +1,5 @@
-Config settings = new Config();
+//Config settings = new Config();
+Config settings = new Config(@"/home/penb/CsharpProj/AlgorithmPR1/names.txt", @"/home/penb/CsharpProj/AlgorithmPR1/requirements.txt", @"/home/penb/CsharpProj/AlgorithmPR1/position.txt");
 WorkersData workersData = new WorkersData(settings.namesPath, settings.positionPath);
 workersData.root.PrintTree();
 Requirements requirements = new Requirements(settings.requirementsPath);
@@ -17,6 +18,3 @@ else
 {
     Console.WriteLine("Путь не найден.");
 }
-
-
-
