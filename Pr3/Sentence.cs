@@ -50,10 +50,23 @@ public class Sentence
 
     }
 
-    public void printall()
+    public void printall() // Потом переписать
+{
+    for (int i = 0; i < _tokens.Count; i++)
     {
-        for(int i = 0; i < _tokens.Count;i++)
-        System.Console.Write(_tokens[i].GetSTR());
-    }
+        Console.Write(_tokens[i].GetSTR());
 
+        if (i + 1 < _tokens.Count)
+        {
+            if (_tokens[i] is Word && _tokens[i + 1] is Word)
+            {
+                Console.Write(" ");
+            }
+            else if (_tokens[i] is Punctuation && _tokens[i + 1] is Word)
+            {
+                Console.Write(" ");
+            }
+        }
+    }
+}
 }
