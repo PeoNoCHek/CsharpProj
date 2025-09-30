@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmPR1", "AlgorithmPR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr3", "Pr3\Pr3.csproj", "{7D0B912B-4E78-4B80-A4CB-9447A3E55BFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr2withsomeproblems", "Pr2withsomeproblems\Pr2withsomeproblems.csproj", "{91094B6C-FB40-4F9D-A3EC-F6BAA77B8ED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,11 +1,11 @@
 public class Text
 {
-
    private List<Sentence> _text = new List<Sentence>(); //временно публичноке
     public void AddSentence(Sentence sentence)
     {
         _text.Add(sentence);
     }
+    public List<Sentence> GetSentencesList() => _text;
 
     public void PrintAllSentences()
     {

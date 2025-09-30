@@ -1,8 +1,8 @@
 using System.Text;
 
-public static class Parser //Потом переаписать
+public static class Parser 
 {
-    public static Text TextParser(String path)
+    public static Text Parse(String path)
     {
         Text result = new Text();
 
@@ -14,10 +14,8 @@ public static class Parser //Потом переаписать
             while ((c = reader.Read()) != -1)
             {
                 char symbol = (char)c;
-                //System.Console.Write(symbol); //debug
                 switch (symbol)
                 {
-                    //окончание предложения
                     case '?':
                         if (stringBuilder.Length > 0)
                         {
@@ -40,9 +38,7 @@ public static class Parser //Потом переаписать
                         result.AddSentence(sentence);
                         sentence = new Sentence();
                         break;
-                    case '.': //пересмотреть троеточие
-
-                        //System.Console.WriteLine("добавлено слово " + stringBuilder.ToString());
+                    case '.':
 
                         if (stringBuilder.Length > 0)
                         {
@@ -56,7 +52,7 @@ public static class Parser //Потом переаписать
                         break;
                     //окончание предложения
                     //знаки препинания
-                    case ',' or '«' or '»' or '\'' or '\"' or ':' or ';' or '—': //Здесь основные проблемы касающиеся 
+                    case ',' or '«' or '»' or '\'' or '\"' or ':' or ';' or '—':  
 
                         if (stringBuilder.Length > 0)
                         {
@@ -64,7 +60,7 @@ public static class Parser //Потом переаписать
                             stringBuilder.Clear();
                         }
 
-                        //System.Console.WriteLine("добавлен символ " + symbol); //debug
+                        
                         sentence.AddPunctuation(new Punctuation(symbol));
                         break;
 
@@ -93,7 +89,6 @@ public static class Parser //Потом переаписать
             {
                 sentence.AddWord(new Word(stringBuilder.ToString()));
             }
-
         }
         return result;
     }

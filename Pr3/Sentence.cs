@@ -2,10 +2,16 @@ using System.Text;
 
 public class Sentence
 {
-    private SentenceType sentenceType;
+    public static int CompareSentencesByWordCount(Sentence sentence0, Sentence sentence1)
+    {
+        
+        return 0;
+    }
+    private SentenceType _sentenceType;
+    private int _wordsCount = 0;
 
     private List<IToken> _tokens = new List<IToken>(); //временно паблик !!!!!!!!!!!!!!!
-    public int tokensCount
+    public int tokensCount //   число токенов/длина предложения 
     {
         get
         {
@@ -30,6 +36,7 @@ public class Sentence
 
     public void AddWord(Word word)
     {
+        _wordsCount++;
         _tokens.Add(word);
         wordAndPunctuationPos.Append('w');
     }
@@ -42,7 +49,7 @@ public class Sentence
 
     public void SetType(SentenceType type)
     {
-        sentenceType = type;
+        _sentenceType = type;
     }
     public void Close()
     {
