@@ -2,37 +2,26 @@ using System.Text;
 
 public class Sentence
 {
-    public static int CompareSentencesByWordCount(Sentence sentence0, Sentence sentence1)
+    public static int CompareSentencesByWordCount(Sentence sentence0, Sentence sentence1) //определение 
     {
-        
-        return 0;
+        if (sentence0._wordsCount == sentence1._wordsCount) return 0;
+        if (sentence0._wordsCount > sentence1._wordsCount) return 1;
+        return -1;
     }
+
+    public static int CompareSentencesByTokensCount(Sentence sentence0, Sentence sentence1)
+    {
+        if (sentence0._tokens.Count == sentence1._tokens.Count) return 0;
+        if (sentence0._tokens.Count > sentence1._tokens.Count) return 1;
+        return -1;
+    }
+
     private SentenceType _sentenceType;
     private int _wordsCount = 0;
 
     private List<IToken> _tokens = new List<IToken>(); //временно паблик !!!!!!!!!!!!!!!
-    public int tokensCount //   число токенов/длина предложения 
-    {
-        get
-        {
-            return _tokens.Count;
-        }
-    }
 
     StringBuilder wordAndPunctuationPos = new StringBuilder();
-
-    public Sentence()
-    {
-
-    }
-
-    public Sentence(Sentence sentence)
-    {
-        //для троеточия и тд пока что будет пустым
-
-    }
-
-
 
     public void AddWord(Word word)
     {
@@ -51,29 +40,28 @@ public class Sentence
     {
         _sentenceType = type;
     }
-    public void Close()
+
+    
+    public override string ToString() // Потом переписать
     {
 
-
-    }
-
-    public void printall() // Потом переписать
-{
-    for (int i = 0; i < _tokens.Count; i++)
-    {
-        Console.Write(_tokens[i].GetSTR());
-
-        if (i + 1 < _tokens.Count)
+        StringBuilder stringBuilder = new StringBuilder(_tokens.Count * 3);
+        for (int i = 0; i < _tokens.Count; i++)
         {
-            if (_tokens[i] is Word && _tokens[i + 1] is Word)
+            stringBuilder.Append(_tokens[i]);
+
+            if (i + 1 < _tokens.Count)
             {
-                Console.Write(" ");
-            }
-            else if (_tokens[i] is Punctuation && _tokens[i + 1] is Word)
-            {
-                Console.Write(" ");
+                if (_tokens[i] is Word && _tokens[i + 1] is Word)
+                {
+                    stringBuilder.Append(' ');
+                }
+                else if (_tokens[i] is Punctuation && _tokens[i + 1] is Word)
+                {
+                    stringBuilder.Append(' ');
+                }
             }
         }
+        return stringBuilder.ToString();
     }
-}
 }

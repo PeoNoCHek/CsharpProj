@@ -1,14 +1,4 @@
-public static class Pr3Methods
+public static class Pr3Methods //возможно удалится
 {
-    public static void SortByWordsCount(Text text)
-    {
 
-        
-
-
-
-
-
-
-    }
 }

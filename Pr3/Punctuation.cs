@@ -17,7 +17,7 @@ public class Punctuation : IToken
         }
     }
 
-    public String GetSTR()
+    public override String ToString()
     {
         return _symbol.ToString();
     }

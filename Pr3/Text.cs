@@ -1,6 +1,27 @@
 public class Text
 {
-   private List<Sentence> _text = new List<Sentence>(); //временно публичноке
+    private List<Sentence> _text;//временно публичноке
+    public Text(List<Sentence> sentences)
+    {
+        this._text = sentences;
+    }
+
+    public Text()
+    {
+        this._text = new List<Sentence>();
+    }
+
+    public void SortByWordsCount()
+    {
+        _text.Sort(Sentence.CompareSentencesByWordCount);
+    }
+
+    public void SortByTokensCount()
+    {
+        _text.Sort(Sentence.CompareSentencesByTokensCount);
+    }
+
+
     public void AddSentence(Sentence sentence)
     {
         _text.Add(sentence);
@@ -11,8 +32,9 @@ public class Text
     {
         for (int i = 0; i < _text.Count; i++)
         {
-            _text[i].printall();
+            System.Console.WriteLine(_text[i]);
         }
     }
     
+
 }
