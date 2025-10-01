@@ -22,14 +22,14 @@ public static class TreePath
 
     public static (int money, List<int> numbers) FindFastestPath(WorkersData workers, Requirements requirements1)
     {
-        var memo = new Dictionary<int, (int cost, List<int> path)>();
+        var memory = new Dictionary<int, (int cost, List<int> path)>();
 
 
 
         (int cost, List<int> path) GetMinCostWithPath(int id, HashSet<int> visiting)
         {
         
-            if (memo.TryGetValue(id, out var cached))
+            if (memory.TryGetValue(id, out var cached))
                 return cached;
 
             if (visiting.Contains(id))
@@ -45,9 +45,9 @@ public static class TreePath
             if (!requirements1.requirements_dictionary.ContainsKey(id))
             {
                 var p = new List<int> { id };
-                memo[id] = (selfMoney, p);
+                memory[id] = (selfMoney, p);
                 visiting.Remove(id);
-                return memo[id];
+                return memory[id];
             }
 
             int bestExtra = int.MaxValue;
@@ -98,7 +98,7 @@ public static class TreePath
                 result = (selfMoney + bestExtra, final);
             }
 
-            memo[id] = result;
+            memory[id] = result;
             visiting.Remove(id);
             return result;
         }
