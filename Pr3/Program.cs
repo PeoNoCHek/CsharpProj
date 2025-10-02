@@ -1,6 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string path = @"/home/penb/CsharpProj/Pr3/text2.txt";
+string path = @"/home/penb/Csharpproj/CsharpProj/Pr3/text2.txt";
 Text test = Parser.Parse(path);
+String[] choose = {
+"Вывести все предложения заданного текста в порядке возрастания количества слов в предложениях.",
+"Вывести все предложения заданного текста в порядке возрастания длины предложения.",
+"Во всех вопросительных предложениях текста найти слова заданной длины (не повторять одни и те же слова)."
+
+
+
+
+
+
+
+
+
+
+
+};
+
+
+
+
+
+
+test.PrintAllSentences();
+System.Console.WriteLine("********************************************");
 test.SortByTokensCount();
 test.PrintAllSentences();
 

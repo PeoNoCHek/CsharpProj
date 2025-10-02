@@ -1,8 +1,9 @@
 public enum SentenceType
 {
-    Dot = 1,
-    Exclamation = 2,
-    Question = 3
+    Unknown,
+    Dot,
+    Exclamation,
+    Question
 }
 
 public enum TokenType

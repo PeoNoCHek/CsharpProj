@@ -16,12 +16,27 @@ public class Sentence
         return -1;
     }
 
-    private SentenceType _sentenceType;
+    public SentenceType sentenceType{ private set; get; } = SentenceType.Unknown;
     private int _wordsCount = 0;
 
     private List<IToken> _tokens = new List<IToken>(); //временно паблик !!!!!!!!!!!!!!!
 
+
     StringBuilder wordAndPunctuationPos = new StringBuilder();
+
+    public HashSet<IToken> NonRecurringWordsWithThisLength (int Length)//Получение всех неповторяющихся слов определенной длины в предложении
+    {
+        HashSet<IToken> result = new HashSet<IToken>();
+        for (int i = 0; i < _tokens.Count; i++)
+        {
+            if (_tokens[i].Type == TokenType.Word && _tokens[i].Length == Length)
+            {
+                result.Add(_tokens[i]);
+            }
+        }
+
+        return result;
+    }
 
     public void AddWord(Word word)
     {
@@ -38,7 +53,7 @@ public class Sentence
 
     public void SetType(SentenceType type)
     {
-        _sentenceType = type;
+        sentenceType = type;
     }
 
     

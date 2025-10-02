@@ -35,6 +35,44 @@ public class Text
             System.Console.WriteLine(_text[i]);
         }
     }
-    
+
+
+    public HashSet<IToken> FindAllWordsWithOneLengthInQuestionSentences(int wordLength) //на вторую пока прототип доделать потом
+    {
+        HashSet<IToken> result = new HashSet<IToken>();
+        for (int i = 0; i < _text.Count; i++)
+        {
+            if (_text[i].sentenceType == SentenceType.Question)
+            {
+               
+                
+                
+
+
+
+            }
+
+        }
+
+
+
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
