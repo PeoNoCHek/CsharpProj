@@ -1,34 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
-string path = @"/home/penb/Csharpproj/CsharpProj/Pr3/text2.txt";
+string path = @"/home/penb/Csharpproj/CsharpProj/Pr3/warandpeace0.txt";
+//исправить проверку троеточия в парсере !!!!!!!!!!!!!
 Text test = Parser.Parse(path);
-String[] choose = {
+String[] alltext = {
+"Вывести весь текст",
 "Вывести все предложения заданного текста в порядке возрастания количества слов в предложениях.",
 "Вывести все предложения заданного текста в порядке возрастания длины предложения.",
 "Во всех вопросительных предложениях текста найти слова заданной длины (не повторять одни и те же слова)."
-
-
-
-
-
-
-
-
-
-
-
+};
+Action[] action = {
+test.PrintAllSentences,
+test.SortByWordsCount,
+test.SortByTokensCount,
 };
 
-
-
-
-
-
-test.PrintAllSentences();
-System.Console.WriteLine("********************************************");
-test.SortByTokensCount();
-test.PrintAllSentences();
-
-
+Menu menu = new Menu(alltext, action);
+while (true)
+{
+    menu.SeeMenu();
+    menu.DoCommand(menu.ReadCommand());
+}
 //  System.Console.WriteLine();
 //  System.Console.WriteLine("СТАРОЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
 //  test.PrintAllSentences();

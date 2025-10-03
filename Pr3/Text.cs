@@ -36,6 +36,12 @@ public class Text
         }
     }
 
+    public void SaveTextIntoFile()
+    {
+        //пока что прототип здесь будет по тому какой метод здесь будет
+    }
+
+
 
     public HashSet<IToken> FindAllWordsWithOneLengthInQuestionSentences(int wordLength) //на вторую пока прототип доделать потом
     {
@@ -44,9 +50,9 @@ public class Text
         {
             if (_text[i].sentenceType == SentenceType.Question)
             {
-               
-                
-                
+
+
+
 
 
 

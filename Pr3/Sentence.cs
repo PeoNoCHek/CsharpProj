@@ -5,8 +5,8 @@ public class Sentence
     public static int CompareSentencesByWordCount(Sentence sentence0, Sentence sentence1) //определение 
     {
         if (sentence0._wordsCount == sentence1._wordsCount) return 0;
-        if (sentence0._wordsCount > sentence1._wordsCount) return 1;
-        return -1;
+        if (sentence0._wordsCount > sentence1._wordsCount) return -1;
+        return 1;
     }
 
     public static int CompareSentencesByTokensCount(Sentence sentence0, Sentence sentence1)

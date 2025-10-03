@@ -7,6 +7,7 @@ public class Program
     public const String configpath = @" Config.txt path ";  //Config.txt path
     public static void Main(String[] args)
     {
+
         using (InputOutputFileAndReadPaths filereaderandwriter = new InputOutputFileAndReadPaths(configpath, ["Cat and mouse\n", "Cat Mouse  Distance", "-------------------"]))
         {
             Board game = new Board(Int32.Parse(filereaderandwriter.TEXTFROMFILE[0]));
